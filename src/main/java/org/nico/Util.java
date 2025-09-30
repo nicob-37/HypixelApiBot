@@ -24,6 +24,7 @@ public class Util {
 
     public static final UUID HYPIXEL = UUID.fromString("f7c77d99-9f15-4a66-a87d-c4a51ef30d19");
     public static final UUID FAKENICO = UUID.fromString("84351d14-143a-4d91-95e9-06dcdd5a60eb");
+    //public static final UUID YARD = UUID.fromString("")
 
     public static void await() {
         while (!Thread.interrupted()) {
@@ -55,4 +56,5 @@ public class Util {
         }
         return r;
     }
+
 }
