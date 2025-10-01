@@ -2,6 +2,7 @@ package org.nico;
 
 import net.hypixel.api.HypixelAPI;
 
+import net.hypixel.api.data.type.GameType;
 import net.hypixel.api.reply.GuildReply;
 import net.hypixel.api.reply.PlayerReply;
 import net.hypixel.api.reply.PlayerReply.Player;
@@ -82,7 +83,8 @@ public class PlayerInfo {
 
     public static void main(String[] args) {
         try {
-            System.out.println(GetInfo.playerOverview(Util.UUIDS.FAKENICO).NAME);
+            System.out.println("Name: " + Util.formatRank(GetInfo.playerOverview(Util.UUIDS.FAKENICO).HIGHEST_RANK) + GetInfo.playerOverview(Util.UUIDS.FAKENICO).NAME);
+            System.out.println("Network LVL: " + (Double) GetInfo.playerOverview(Util.UUIDS.FAKENICO).NETWORK_LEVEL);
         } catch (InterruptedException e) {
             System.out.println("PlayerInfo.java main() error");
         } finally {

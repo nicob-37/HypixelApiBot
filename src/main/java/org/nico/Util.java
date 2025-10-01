@@ -59,7 +59,7 @@ public class Util {
         else if (r.contains("SUPERSTAR")) {
             r = r.replace("SUPERSTAR", "MVP++");
         }
-        return r;
+        return "["+r+"] ";
     }
 
 }

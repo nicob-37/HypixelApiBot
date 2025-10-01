@@ -65,4 +65,23 @@ public class Info {
     public void setSuperstarTagColor(String c) {this.SUPERSTAR_TAG_COLOR = c;}
     public void setPetStats(PetStats p) {this.PET_STATS = p;}
 
+    public Object returnValue(InfoObj type) {
+        switch (type) {
+            case NAME: return this.NAME;
+            case ONLINE: return this.ONLINE;
+            case ID: return this.ID;
+            case KARMA: return this.KARMA;
+            case HIGHEST_RANK: return this.HIGHEST_RANK;
+            case FIRST_LOGIN_DATE: return this.FIRST_LOGIN_DATE;
+            case LAST_LOGIN_DATE: return this.LAST_LOGIN_DATE;
+            case LAST_LOGOUT_DATE: return this.LAST_LOGOUT_DATE;
+            case MOST_RECENT_GAMETYPE: return this.MOST_RECENT_GAMETYPE;
+            case NETWORK_EXP: return this.NETWORK_EXP;
+            case NETWORK_LEVEL: return this.NETWORK_LEVEL;
+            case SELECTED_PLUS_COLOR: return this.SELECTED_PLUS_COLOR;
+            case SUPERSTAR_TAG_COLOR: return this.SUPERSTAR_TAG_COLOR;
+            case PET_STATS: return this.PET_STATS;
+            default: return null;
+        }
+    }
 }
