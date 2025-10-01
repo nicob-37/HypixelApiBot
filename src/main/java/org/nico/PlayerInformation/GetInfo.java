@@ -60,7 +60,12 @@ public class GetInfo {
             System.err.println("Player Not Found");
             return info;
         }
-
+        info = new Info(player.getName(), player.isOnline(), player.getUuid(), player.getKarma(),
+                player.getHighestRank(), player.getFirstLoginDate(), player.getLastLoginDate(), player.getLastLogoutDate(),
+                player.getMostRecentGameType(), player.getNetworkExp(), player.getNetworkLevel(), player.getSelectedPlusColor(),
+                player.getSuperstarTagColor(), player.getPetStats()
+        );
+        /*
         info.setName(player.getName());
         info.setOnline(player.isOnline());
         info.setUUID(player.getUuid());
@@ -75,6 +80,8 @@ public class GetInfo {
         info.setSelectedPlusColor(player.getSelectedPlusColor());
         info.setSuperstarTagColor(player.getSuperstarTagColor());
         info.setPetStats(player.getPetStats());
+        */
+
 
         return info;
     }

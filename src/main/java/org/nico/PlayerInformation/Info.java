@@ -30,7 +30,25 @@ public class Info {
     }
 
     public Info() {}
-    public Info(String name, boolean online, UUID id) {}
+    public Info(String name, boolean online, UUID id, long karma, String highestRank, ZonedDateTime firstLoginDate, ZonedDateTime lastLoginDate,
+                ZonedDateTime lastLogoutDate, GameType mostRecentGametype, long networkExp, double networkLevel,
+                String selectedPlusColor, String superstarTagColor, PetStats petStats) {
+
+        this.NAME = name;
+        this.ONLINE = online;
+        this.ID = id;
+        this.KARMA = karma;
+        this.HIGHEST_RANK = highestRank;
+        this.FIRST_LOGIN_DATE = firstLoginDate;
+        this.LAST_LOGIN_DATE = lastLoginDate;
+        this.LAST_LOGOUT_DATE = lastLogoutDate;
+        this.MOST_RECENT_GAMETYPE = mostRecentGametype;
+        this.NETWORK_EXP = networkExp;
+        this.NETWORK_LEVEL = networkLevel;
+        this.SELECTED_PLUS_COLOR = selectedPlusColor;
+        this.SUPERSTAR_TAG_COLOR = superstarTagColor;
+        this.PET_STATS = petStats;
+    }
 
     public void setName(String n) {this.NAME = n;}
     public void setOnline(boolean b) {this.ONLINE = b;}
