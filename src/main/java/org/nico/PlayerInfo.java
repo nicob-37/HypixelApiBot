@@ -82,7 +82,7 @@ public class PlayerInfo {
 
     public static void main(String[] args) {
         try {
-            System.out.println(GetInfo.playerOverview(Util.FAKENICO).NAME);
+            System.out.println(GetInfo.playerOverview(Util.FAKENICO).PET_STATS);
         } catch (InterruptedException e) {
             System.out.println("PlayerInfo.java main() error");
         } finally {

@@ -61,8 +61,6 @@ public class GetInfo {
             return info;
         }
 
-        player.getMos
-
         info.setName(player.getName());
         info.setOnline(player.isOnline());
         info.setUUID(player.getUuid());
@@ -72,6 +70,11 @@ public class GetInfo {
         info.setLastLoginDate(player.getLastLoginDate());
         info.setLastLogoutDate(player.getLastLogoutDate());
         info.setMostRecentGametype(player.getMostRecentGameType());
+        info.setNetworkExp(player.getNetworkExp());
+        info.setNetworkLevel(player.getNetworkLevel());
+        info.setSelectedPlusColor(player.getSelectedPlusColor());
+        info.setSuperstarTagColor(player.getSuperstarTagColor());
+        info.setPetStats(player.getPetStats());
 
         return info;
     }
