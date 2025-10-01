@@ -22,8 +22,11 @@ public class Util {
         API = new HypixelAPI(new ApacheHttpClient(UUID.fromString(getApiKey())));
     }
 
-    public static final UUID HYPIXEL = UUID.fromString("f7c77d99-9f15-4a66-a87d-c4a51ef30d19");
-    public static final UUID FAKENICO = UUID.fromString("84351d14-143a-4d91-95e9-06dcdd5a60eb");
+    public static class UUIDS {
+        public static final UUID HYPIXEL = UUID.fromString("f7c77d99-9f15-4a66-a87d-c4a51ef30d19");
+        public static final UUID FAKENICO = UUID.fromString("84351d14-143a-4d91-95e9-06dcdd5a60eb");
+    }
+
 
     public static void await() {
         while (!Thread.interrupted()) {
