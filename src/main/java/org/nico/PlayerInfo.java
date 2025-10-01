@@ -6,6 +6,8 @@ import net.hypixel.api.reply.GuildReply;
 import net.hypixel.api.reply.PlayerReply;
 import net.hypixel.api.reply.PlayerReply.Player;
 import net.hypixel.api.reply.GuildReply.Guild;
+import org.nico.PlayerInformation.GetInfo;
+import org.nico.PlayerInformation.Info;
 
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
@@ -21,13 +23,14 @@ public class PlayerInfo {
     public static void shutDown() {
         api.shutdown();
     }
+
     public static String getUUID(String s) throws ExecutionException {
         String reply = null;
         try {
             reply = api.getPlayerByName(s).get().getPlayer().getUuid().toString();;
             return reply;
         } catch (InterruptedException e) {
-            System.out.println("Couldn't get Player UUID");
+            System.err.println("Couldn't get Player UUID");
         }
         return reply;
     }
@@ -37,7 +40,7 @@ public class PlayerInfo {
             apiReply = api.getPlayerByUuid(ID).get();
             guildReply = api.getGuildByPlayer(ID).get();
         } catch (ExecutionException e) {
-            Fails.requestFail();
+            System.err.println("API Request Failed");
         }
 
         return (player.isOnline()? "Online" : "Offline");
@@ -50,7 +53,7 @@ public class PlayerInfo {
             guildReply = api.getGuildByPlayer(ID).get();
 
         } catch (ExecutionException e) {
-            Fails.requestFail();
+            System.err.println("API Request Failed");
 
             e.getCause().printStackTrace();
             return;
@@ -71,14 +74,19 @@ public class PlayerInfo {
         System.out.println("Status: " + onlineStatus(ID));
 
         try {
-            System.out.println("FakeNico UUID:" + getUUID("FakeNico"));
+            System.out.println("MVP++ UUID: " + getUUID("mameowo"));
         } catch (ExecutionException e) {
-            Fails.uuidGetFail();
+            System.err.println("UUID Fetch Fail");
         }
     }
 
-    public static void main(String[] args) throws InterruptedException {
-        getPlayerInfo(Util.FAKENICO);
-        shutDown();
+    public static void main(String[] args) {
+        try {
+            System.out.println(GetInfo.playerOverview(Util.FAKENICO).NAME);
+        } catch (InterruptedException e) {
+            System.out.println("PlayerInfo.java main() error");
+        } finally {
+            shutDown();
+        }
     }
 }

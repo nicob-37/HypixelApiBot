@@ -13,7 +13,7 @@ public class Util {
         String apiKey = System.getenv("HYPIXEL_API_KEY");
         if (apiKey != null) {return apiKey;}
 
-        return System.getProperty("apiKey", "4bc9573c-37e4-4cf4-96e3-f95bc046af57");
+        return System.getProperty("apiKey", "cf526308-a56b-4ec5-b2e2-6dc69ca7eb3d");
     }
 
     public static final HypixelAPI API;
@@ -24,7 +24,6 @@ public class Util {
 
     public static final UUID HYPIXEL = UUID.fromString("f7c77d99-9f15-4a66-a87d-c4a51ef30d19");
     public static final UUID FAKENICO = UUID.fromString("84351d14-143a-4d91-95e9-06dcdd5a60eb");
-    //public static final UUID YARD = UUID.fromString("")
 
     public static void await() {
         while (!Thread.interrupted()) {
@@ -53,6 +52,9 @@ public class Util {
     public static String formatRank(String r) {
         if (r.contains("PLUS")) {
             r = r.replace("_PLUS", "+");
+        }
+        else if (r.contains("SUPERSTAR")) {
+            r = r.replace("SUPERSTAR", "MVP++");
         }
         return r;
     }
