@@ -8,17 +8,17 @@ import java.time.ZonedDateTime;
 import java.util.UUID;
 
 public class Info {
-    public String NAME;
-    public boolean ONLINE;
-    public UUID ID;
-    public long KARMA;
-    public String HIGHEST_RANK;
-    public ZonedDateTime FIRST_LOGIN_DATE, LAST_LOGIN_DATE, LAST_LOGOUT_DATE;
-    public GameType MOST_RECENT_GAMETYPE;
-    public long NETWORK_EXP;
-    public double NETWORK_LEVEL;
-    public String SELECTED_PLUS_COLOR, SUPERSTAR_TAG_COLOR;
-    public PetStats PET_STATS;
+    private String NAME;
+    private boolean ONLINE;
+    private UUID ID;
+    private long KARMA;
+    private String HIGHEST_RANK;
+    private ZonedDateTime FIRST_LOGIN_DATE, LAST_LOGIN_DATE, LAST_LOGOUT_DATE;
+    private GameType MOST_RECENT_GAMETYPE;
+    private long NETWORK_EXP;
+    private double NETWORK_LEVEL;
+    private String SELECTED_PLUS_COLOR, SUPERSTAR_TAG_COLOR;
+    private PetStats PET_STATS;
 
     public enum InfoObj {
         NAME, ONLINE, ID, KARMA,
@@ -64,6 +64,21 @@ public class Info {
     public void setSelectedPlusColor(String c) {this.SELECTED_PLUS_COLOR = c;}
     public void setSuperstarTagColor(String c) {this.SUPERSTAR_TAG_COLOR = c;}
     public void setPetStats(PetStats p) {this.PET_STATS = p;}
+
+    public String getName() {return this.NAME;}
+    public boolean getOnline() {return this.ONLINE;}
+    public UUID getUUID() {return this.ID;}
+    public long getKarma() {return this.KARMA;}
+    public String getHighestRank() {return this.HIGHEST_RANK;}
+    public ZonedDateTime getFirstLoginDate() {return this.FIRST_LOGIN_DATE;}
+    public ZonedDateTime getLastLoginDate() {return this.LAST_LOGIN_DATE;}
+    public ZonedDateTime getLastLogoutDate() {return this.LAST_LOGOUT_DATE;}
+    public GameType getMostRecentGametype() {return this.MOST_RECENT_GAMETYPE;}
+    public long getNetworkExp() {return this.NETWORK_EXP;}
+    public double getNetworkLevel() {return this.NETWORK_LEVEL;}
+    public String getSelectedPlusColor() {return this.SELECTED_PLUS_COLOR;}
+    public String getSUPERSTAR_TAG_COLOR() {return this.SUPERSTAR_TAG_COLOR;}
+    public PetStats getPetStats() {return this.PET_STATS;}
 
     public Object returnValue(InfoObj type) {
         switch (type) {

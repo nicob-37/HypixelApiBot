@@ -83,8 +83,9 @@ public class PlayerInfo {
 
     public static void main(String[] args) {
         try {
-            System.out.println("Name: " + Util.formatRank(GetInfo.playerOverview(Util.UUIDS.FAKENICO).HIGHEST_RANK) + GetInfo.playerOverview(Util.UUIDS.FAKENICO).NAME);
-            System.out.println("Network LVL: " + (Double) GetInfo.playerOverview(Util.UUIDS.FAKENICO).NETWORK_LEVEL);
+            Info playerInfo = GetInfo.playerOverview(Util.UUIDS.FAKENICO);
+            System.out.println("Name: " + Util.formatRank(playerInfo.getHighestRank()) + playerInfo.getName());
+            System.out.println("Network LVL: " + (Double) playerInfo.getNetworkLevel());
         } catch (InterruptedException e) {
             System.out.println("PlayerInfo.java main() error");
         } finally {

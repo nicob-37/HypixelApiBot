@@ -13,7 +13,7 @@ public class Util {
         String apiKey = System.getenv("HYPIXEL_API_KEY");
         if (apiKey != null) {return apiKey;}
 
-        return System.getProperty("apiKey", "cf526308-a56b-4ec5-b2e2-6dc69ca7eb3d");
+        return System.getProperty("apiKey", "dcbd1e55-08ba-41fa-850b-f98991425f44");
     }
 
     public static final HypixelAPI API;
