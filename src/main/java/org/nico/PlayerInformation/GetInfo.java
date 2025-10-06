@@ -38,6 +38,8 @@ public class GetInfo {
                 player.getSuperstarTagColor(), player.getPetStats()
         );
 
+        //player.getProperty("");
+
         return info;
     }
 
